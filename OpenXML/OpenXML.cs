@@ -1,11 +1,14 @@
 using ExcelExamples.Domain;
+using NLog;
 
 namespace ExcelExamples.OpenXML;
 public class OpenXML: IExcel
 {
+    private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+
     public Task RunAsync()
     {
-        Console.WriteLine("OpenXML run");
+        _logger.Info("OpenXML run");
         return Task.CompletedTask;
     }
 }
