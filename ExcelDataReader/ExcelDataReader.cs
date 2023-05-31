@@ -1,5 +1,6 @@
+using ExcelExamples.Domain;
 
-namespace ExcelExamples;
+namespace ExcelExamples.ExcelDataReader;
 
 public class ExcelDataReader : IExcel
 {

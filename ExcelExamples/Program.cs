@@ -1,24 +1,58 @@
-﻿using ExcelExamples;
+﻿using ExcelExamples.Domain;
+using NLog;
+using System.Reflection;
 
-var types = AppDomain.CurrentDomain.GetAssemblies()
-    .SelectMany(s => s.GetTypes())
-    .Where(p => typeof(IExcel).IsAssignableFrom(p) && !p.IsAbstract)
-    .ToArray();
+Logger logger = LogManager.GetCurrentClassLogger();
+
+args = new string[] {"OpenXML.dll"};
 
 if (!args.Any())
 {
-    Console.WriteLine($"Enter name excel example to run. Allowed values: '{string.Join(',', types.Select(t => t.Name))}'");
+    logger.Fatal("Enter excel dll name");
     return;
 }
 
-var excelExample = types.FirstOrDefault(t => t.Name == args[0]);
+var dllPath = Path.Combine(AppContext.BaseDirectory, args[0]);
+if (!File.Exists(dllPath))
+{
+    logger.Fatal($"File '{dllPath}' does not exist");
+    return;
+}
+Assembly? dll;
+try
+{
+    dll = Assembly.LoadFrom(dllPath);
+}
+catch (Exception ex)
+{
+    logger.Fatal($"Failed to load dll '{dllPath}'.Error: {ex.Message}");
+    return;
+}
+
+var types = dll.GetExportedTypes()
+    .Where(p => typeof(IExcel).IsAssignableFrom(p) && !p.IsAbstract)
+    .ToArray();
+
+var excelExample = types.FirstOrDefault();
 if (excelExample == null)
 {
-    Console.WriteLine($"Incorrect argument value. Allowed values: '{string.Join(',', types.Select(t => t.Name))}'");
+    logger.Fatal($"Failed to find excel class in dll '{dllPath}'");
     return;
 }
 
-var p = Activator.CreateInstance(excelExample);
-var p1 = p as IExcel;
-await p1!.RunAsync();
+try
+{
+    logger.Debug($"Start {excelExample.Name}");
+    var p = Activator.CreateInstance(excelExample);
+    var p1 = p as IExcel;
+    await p1!.RunAsync();
+}
+catch (Exception ex)
+{
+    logger.Fatal(ex.Message);
+    logger.Debug(ex);
+}
+
+logger.Info("----------------End----------------");
+
 

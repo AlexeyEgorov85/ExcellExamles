@@ -1,6 +1,6 @@
+using ExcelExamples.Domain;
 
-namespace ExcelExamples;
-
+namespace ExcelExamples.OpenXML;
 public class OpenXML: IExcel
 {
     public Task RunAsync()

@@ -1,5 +1,5 @@
 
-namespace ExcelExamples;
+namespace ExcelExamples.Domain;
 
 public interface IExcel
 {
