@@ -3,5 +3,5 @@ namespace ExcelExamples.Domain;
 
 public interface IExcel
 {
-    Task RunAsync();
+    Task RunAsync(Film[] films);
 }

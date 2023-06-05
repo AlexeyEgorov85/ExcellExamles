@@ -1,4 +1,5 @@
-﻿using ExcelExamples.Domain;
+﻿using ExcelExamples;
+using ExcelExamples.Domain;
 using NLog;
 using System.Reflection;
 
@@ -42,10 +43,11 @@ if (excelExample == null)
 
 try
 {
-    logger.Debug($"Start {excelExample.Name}");
+    logger.Info($"------------Start {excelExample.Name}------------");
     var p = Activator.CreateInstance(excelExample);
     var p1 = p as IExcel;
-    await p1!.RunAsync();
+    var data = FilmSeeder.Get();
+    await p1!.RunAsync(data);
 }
 catch (Exception ex)
 {
