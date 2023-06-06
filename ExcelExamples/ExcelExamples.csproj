@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Domain\Domain.csproj" />    
-      <ProjectReference Include="..\OpenXML\OpenXML.csproj" />
-      <ProjectReference Include="..\ExcelDataReader\ExcelDataReader.csproj" />
+      <ProjectReference Include="..\OpenXmlExample\OpenXmlExample.csproj" />
+      <ProjectReference Include="..\GoogleSheetExample\GoogleSheetExample.csproj" />
     </ItemGroup>
 </Project>

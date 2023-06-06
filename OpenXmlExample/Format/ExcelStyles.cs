@@ -1,4 +1,4 @@
-namespace ExcelExamples.OpenXML;
+namespace ExcelExamples.OpenXmlExample;
 
 public enum ExcelStyles : uint
 {

@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelExamples", "ExcelExamp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{690C54C6-100A-4517-8F0A-CD081E440131}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelDataReader", "ExcelDataReader\ExcelDataReader.csproj", "{FAB26E9C-807F-42E9-91CF-AA524E9D3E7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleSheetExample", "GoogleSheetExample\GoogleSheetExample.csproj", "{FAB26E9C-807F-42E9-91CF-AA524E9D3E7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenXML", "OpenXML\OpenXML.csproj", "{8473293D-9DF9-4993-A723-F3CF177331E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenXmlExample", "OpenXmlExample\OpenXmlExample.csproj", "{8473293D-9DF9-4993-A723-F3CF177331E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

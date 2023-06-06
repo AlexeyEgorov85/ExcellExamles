@@ -1,14 +1,14 @@
-using ExcelExamples.OpenXML.Format;
+using ExcelExamples.OpenXmlExample.Format;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using ExcelExamples.Domain;
-using ExcelExamples.OpenXML.DocSheets;
+using ExcelExamples.OpenXmlExample.DocSheets;
 using NLog;
 using System.Globalization;
 
-namespace ExcelExamples.OpenXML;
-public class OpenXML : IExcel
+namespace ExcelExamples.OpenXmlExample;
+public class OpenXmlExample : IExcel
 {
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 

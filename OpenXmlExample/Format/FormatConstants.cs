@@ -1,4 +1,4 @@
-namespace ExcelExamples.OpenXML.Format;
+namespace ExcelExamples.OpenXmlExample.Format;
 
 internal static class FormatConstants
 {

@@ -1,7 +1,7 @@
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Spreadsheet;
 
-namespace ExcelExamples.OpenXML.Format;
+namespace ExcelExamples.OpenXmlExample.Format;
 
 internal static class FormatNumbering
 {

@@ -1,9 +1,9 @@
 using ExcelExamples.Domain;
 using NLog;
 
-namespace ExcelExamples.ExcelDataReader;
+namespace ExcelExamples.GoogleSheetExample;
 
-public class ExcelDataReader : IExcel
+public class GoogleSheetExample : IExcel
 {
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
