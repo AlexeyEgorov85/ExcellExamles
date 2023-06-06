@@ -1,8 +1,0 @@
-{
-    "profiles": {
-      "ExcelExamples": {
-        "commandName": "Project",
-        "commandLineArgs": "OpenXML.dll"
-      }
-    }
-  }
